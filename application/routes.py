@@ -5,7 +5,7 @@ from flask import render_template
 @app.route("/index")
 @app.route("/home")
 def index():
-    return render_template("index.html", login=True)
+    return render_template("index.html", index=True)
 
 @app.route("/login")
 def login():
@@ -19,8 +19,8 @@ def courses():
     {"courseID":"4444","title":"Angular 1","description":"Intro to Angular","credits":3,"term":"Fall, Spring"},
     {"courseID":"5555","title":"Java 2","description":"Advanced Java Programming","credits":4,"term":"Fall"}]
     print(courseData[0]["title"])
-    return render_template("courses.html", courseData=courseData)
+    return render_template("courses.html", courseData=courseData, courses=True)
 
 @app.route("/register")
 def register():
-    return render_template("register.html", login=True)
+    return render_template("register.html", Register=True)
