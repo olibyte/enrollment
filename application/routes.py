@@ -23,7 +23,7 @@ def login():
     return render_template("login.html", login=True)
 
 
-@app.route("/courses/")
+@app.route("/courses")
 @app.route("/courses/<term>")
 def courses(term="Spring 2019"):
     return render_template("courses.html", courseData=courseData, courses=True, term=term)
