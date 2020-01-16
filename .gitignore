@@ -1,5 +1,5 @@
-venv\Lib*
-venv\Scripts*
-venv\Include*
+venv\Lib\
+venv\Scripts\
+venv\Include\
 venv\pyvenv.cfg
-venv\Lib\site-packages\__pycache__
+venv\Lib\site-packages\__pycache__\
