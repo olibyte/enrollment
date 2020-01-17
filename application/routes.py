@@ -11,7 +11,7 @@ courseData = [{"courseID":"1111","title":"PHP 111","description":"Intro to PHP",
 def index():
     return render_template("index.html", index=True )
 
-@app.route("/login", methods=['GET', 'POST'])
+@app.route("/login", methods=['GET','POST'])
 def login():
     form = LoginForm()
     if form.validate_on_submit():
@@ -19,7 +19,7 @@ def login():
             flash("You are successfully logged in!", "success")
             return redirect("/index")
         else:
-            flash("Sorry, something went wrong.", "danger")
+            flash("Sorry, something went wrong.","danger")
     return render_template("login.html", title="Login", form=form, login=True )
 
 @app.route("/courses/")
