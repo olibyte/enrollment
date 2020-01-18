@@ -34,6 +34,11 @@ def login():
             flash("Sorry, something went wrong.", "danger")
     return render_template("login.html", title="Login", form=form, login=True)
 
+@app.route("/logout")
+def logout():
+    session['user_id']=False
+    session.pop('username',None)
+    return redirect(url_for('index'))
 
 @app.route("/courses/")
 @app.route("/courses/<term>")
@@ -69,9 +74,13 @@ def register():
 
 @app.route("/enrollment", methods=["GET", "POST"])
 def enrollment():
+
+    if not session.get('username'):
+        return redirect(url_for('login'))
+
     courseID = request.form.get('courseID')
     courseTitle = request.form.get('title')
-    user_id = 2
+    user_id = session.get('user_id')
 
     if courseID:
         if Enrollment.objects(user_id=user_id, courseID=courseID):
