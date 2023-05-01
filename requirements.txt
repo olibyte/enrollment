@@ -1,8 +1,8 @@
-﻿autopep8==1.4.4
+autopep8==1.4.4
 Babel==2.9.1
 blinker==1.4
 Click==7.0
-Flask==1.1.1
+Flask==2.3.2
 Flask-BabelEx==0.9.3
 Flask-Login==0.4.1
 Flask-Mail==0.9.1
